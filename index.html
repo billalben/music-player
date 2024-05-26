@@ -142,6 +142,10 @@
                 <button class="btn-icon toggle" data-shuffle>
                   <span class="material-symbols-rounded">shuffle</span>
                 </button>
+
+                <button class="btn-icon toggle help-icon" data-modal-toggler>
+                  <span class="material-symbols-rounded">help</span>
+                </button>
               </div>
             </div>
           </div>
@@ -155,6 +159,63 @@
         <div class="overlay" data-playlist-toggler data-overlay></div>
       </article>
     </main>
+
+    <div class="help-modal" data-help-modal>
+      <div class="modal-content">
+        <div class="banner-modal">
+          <h2 class="modal-title">Keyboard shortcuts</h2>
+          <button class="btn-icon" data-close-modal>
+            <span class="material-symbols-rounded" data-modal-toggler
+              >close</span
+            >
+          </button>
+        </div>
+        <ul>
+          <li>
+            <p>Play or Pause Music:</p>
+            <div class="value"><span>Spacebar</span>or<span>Enter</span></div>
+          </li>
+          <li>
+            <p>Next Music:</p>
+            <div class="value">
+              <span>Right Arrow</span>
+            </div>
+          </li>
+          <li>
+            <p>Previous Music:</p>
+            <div class="value">
+              <span>Left Arrow</span>
+            </div>
+          </li>
+          <li>
+            <p>Toggle Shuffle:</p>
+            <div class="value">
+              <span>S</span>
+            </div>
+          </li>
+          <li>
+            <p>Toggle Repeat:</p>
+            <div class="value">
+              <span>R</span>
+            </div>
+          </li>
+          <li>
+            <p>Mute:</p>
+            <div class="value">
+              <span>M</span>
+            </div>
+          </li>
+          <li>
+            <p>Help:</p>
+            <div class="value">
+              <span>H</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal-overlay" data-modal-toggler data-modal-overlay></div>
 
     <!-- - custom js link -->
     <script src="./assets/js/script.js"></script>

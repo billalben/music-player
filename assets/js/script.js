@@ -389,6 +389,8 @@ playerVolumeBtn.addEventListener("click", muteVolume);
  * when click l Key, advance 10 seconds and when click j key, back 10 seconds
  * shuffle music when click s key
  * repeat music when click r key
+ * mute volume when click m key
+ * show help modal when click h key
  */
 
 document.addEventListener("keydown", function (e) {
@@ -399,4 +401,22 @@ document.addEventListener("keydown", function (e) {
   if (e.code === "KeyJ") audioSource.currentTime -= 5;
   if (e.code === "KeyS") shuffle();
   if (e.code === "KeyR") repeat.bind(playerRepeatBtn)();
+  if (e.code === "KeyM") muteVolume();
+  if (e.code === "KeyH") toggleModal();
 });
+
+/**
+ * When click on question mark icon pop up the help modal
+ */
+
+const helpModal = document.querySelector("[data-help-modal]");
+const modalTogglers = document.querySelectorAll("[data-modal-toggler]");
+const modalOverlay = document.querySelector("[data-modal-overlay]");
+
+const toggleModal = function () {
+  helpModal.classList.toggle("active");
+  modalOverlay.classList.toggle("active");
+  document.body.classList.toggle("modalActive");
+};
+
+addEventOnElements(modalTogglers, "click", toggleModal);
