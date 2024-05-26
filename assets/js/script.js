@@ -395,8 +395,8 @@ playerVolumeBtn.addEventListener("click", muteVolume);
 
 document.addEventListener("keydown", function (e) {
   if (e.code === "Space") playBtn.click();
-  if (e.code === "ArrowRight") skipNext();
-  if (e.code === "ArrowLeft") skipPrev();
+  if (e.code === "KeyA") skipPrev();
+  if (e.code === "KeyD") skipNext();
   if (e.code === "KeyL") audioSource.currentTime += 5;
   if (e.code === "KeyJ") audioSource.currentTime -= 5;
   if (e.code === "KeyS") shuffle();
@@ -420,3 +420,31 @@ const toggleModal = function () {
 };
 
 addEventOnElements(modalTogglers, "click", toggleModal);
+
+// Function to detect browser
+function getBrowser() {
+  const ua = navigator.userAgent;
+  if (ua.indexOf("Firefox") > -1) {
+    return "firefox";
+  } else if (ua.indexOf("Chrome") > -1) {
+    return "chrome";
+  } else {
+    return "other";
+  }
+}
+
+// Set CSS variable based on browser
+function setBrowserSpecificStyles() {
+  const root = document.documentElement;
+  const browser = getBrowser();
+  if (browser === "firefox") {
+    root.style.setProperty("--range-fill-top", "7px");
+  } else if (browser === "chrome") {
+    root.style.setProperty("--range-fill-top", "0px");
+  } else {
+    root.style.setProperty("--range-fill-top", "0px"); // Default for other browsers
+  }
+}
+
+// Call the function to set the styles
+setBrowserSpecificStyles();
