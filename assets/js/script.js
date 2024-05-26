@@ -383,7 +383,7 @@ const muteVolume = function () {
 playerVolumeBtn.addEventListener("click", muteVolume);
 
 /**
- * Play Or Pause Music when press space bar or enter key
+ * Play Or Pause Music when press space bar
  * Skip to next music when press right arrow key
  * Skip to previous music when press left arrow key
  * when click l Key, advance 10 seconds and when click j key, back 10 seconds
@@ -394,7 +394,7 @@ playerVolumeBtn.addEventListener("click", muteVolume);
  */
 
 document.addEventListener("keydown", function (e) {
-  if (e.code === "Space" || e.code === "Enter") playMusic();
+  if (e.code === "Space") playBtn.click();
   if (e.code === "ArrowRight") skipNext();
   if (e.code === "ArrowLeft") skipPrev();
   if (e.code === "KeyL") audioSource.currentTime += 5;
